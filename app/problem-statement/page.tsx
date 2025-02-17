@@ -6,11 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 
 const problemStatementsByDivision: { [key: string]: { id: string; statement: string; group: string }[] } = {
   "01": [
-    {
-      id: "1",
-      statement: "Develop a smart irrigation system for sustainable water management in agriculture",
-      group: "011",
-    },
+    { id: "1", statement: "Develop a smart irrigation system for sustainable water management in agriculture", group: "011",},
     { id: "2", statement: "Create an AI-powered pest detection and management system for crops", group: "011" },
     { id: "3", statement: "Design a precision livestock monitoring system for improved animal welfare", group: "014" },
   ],
