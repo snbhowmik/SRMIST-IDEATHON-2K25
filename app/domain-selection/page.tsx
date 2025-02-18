@@ -58,7 +58,6 @@ export default function DomainSelection() {
           >
             <CardHeader>
               <CardTitle>{domain.name}</CardTitle>
-              <CardDescription>Section {domain.id}</CardDescription>
             </CardHeader>
           </Card>
         ))}
