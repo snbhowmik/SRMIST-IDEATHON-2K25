@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import NavBar from "@/components/ui/navBar"
+import Footer from "@/components/ui/footer"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 const problemStatementsByDivision: { [key: string]: { id: string; statement: string; group: string }[] } = {
@@ -155,30 +157,35 @@ export default function ProblemStatement() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Step 3: Select a Problem Statement</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {problems.map((problem) => (
-          <Card
-            key={problem.id}
-            className={`cursor-pointer transition-all ${selectedProblem === problem.id ? "ring-2 ring-blue-500" : ""}`}
-            onClick={() => handleProblemSelect(problem.id)}
-          >
-            <CardHeader>
-              <CardTitle>Topic {problem.group}</CardTitle>
-              
-            </CardHeader>
-            <CardContent>
-              <p>{problem.statement}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-      <div className="mt-8 flex justify-center">
-        <Button onClick={handleSubmit} disabled={!selectedProblem}>
-          Submit Selection
-        </Button>
-      </div>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-100 to-white">
+      <NavBar />
+      
+      <main className="flex flex-col items-center justify-center flex-grow mt-20 px-4 py-20">
+        <h1 className="text-3xl font-bold mb-6 text-center">Step 3: Select a Problem Statement</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {problems.map((problem) => (
+            <Card
+              key={problem.id}
+              className={`cursor-pointer transition-all ${selectedProblem === problem.id ? "ring-2 ring-blue-500" : ""}`}
+              onClick={() => handleProblemSelect(problem.id)}
+            >
+              <CardHeader>
+                <CardTitle>Topic {problem.group}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{problem.statement}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Button onClick={handleSubmit} disabled={!selectedProblem}>
+            Submit Selection
+          </Button>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   )
 }
