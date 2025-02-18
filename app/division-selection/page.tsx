@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
+import  Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 
 const divisionsByDomain: { [key: string]: { id: string; name: string }[] } = {
   A: [
@@ -163,6 +165,17 @@ export default function DivisionSelection() {
   }
 
   return (
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-100 to-white">
+    <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+      <Image src="cropped-srm-trp-logo.png" alt="Logo 1" width={150} height={100} />
+      <ul className="flex space-x-6">
+        <li>
+          <Link href="/" className="text-blue-800 font-semibold">Home</Link>
+        </li>
+      </ul>
+      <Image src="IIC.png" alt="Logo 2" width={150} height={100} />
+    </nav>
+    {/* Main Content */}
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Step 2: Select a Division</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -174,16 +187,16 @@ export default function DivisionSelection() {
           >
             <CardHeader>
               <CardTitle>{division.name}</CardTitle>
-              <CardDescription>Division {division.id}</CardDescription>
             </CardHeader>
           </Card>
         ))}
       </div>
       <div className="mt-8 flex justify-center">
         <Button onClick={handleNext} disabled={!selectedDivision}>
-          Next: View Problem Statements
+          Next: View Topics
         </Button>
       </div>
+    </div>
     </div>
   )
 }

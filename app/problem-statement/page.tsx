@@ -65,6 +65,69 @@ const problemStatementsByDivision: { [key: string]: { id: string; statement: str
     { id: "1", statement: "Spinning, weaving and finishing of textiles", group: "131" },
     { id: "2", statement: "Manufacture of other textiles", group: "139" },
   ],
+  "14": [
+    { id: "1", statement: "Manufacture of wearing apparel, except fur apparel", group: "141" },
+    { id: "2", statement: "Manufacture of articles of fur", group: "142" },
+    { id: "3", statement: "Manufacture of knitted and crocheted apparel", group: "143" },
+  ],
+  "15": [
+    { id: "1", statement: "Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur", group: "151" },
+    { id: "2", statement: "Manufacture of footwear", group: "152" },
+  ],
+  "16": [
+    { id: "1", statement: "Sawmilling and planing of wood", group: "161" },
+    { id: "2", statement: "Manufacture of products of wood, cork, straw and plaiting materials", group: "162" },
+  ],
+  "17": [
+    { id: "1", statement: "Manufacture of paper and paper products", group: "170" },
+  ],
+  "18": [
+    { id: "1", statement: "Printing and service activities related to printing", group: "181" },
+    { id: "2", statement: "Reproduction of Recorded Media", group: "182" },
+  ],
+  "19": [
+    { id: "1", statement: "Manufacture of coke oven products", group: "191" },
+    { id: "2", statement: "Manufacture of refined petroleum products", group: "192" },
+  ],
+  "20": [
+    { id: "1", statement: "Manufacture of basic chemicals, fertilizer and nitrogen compounds, plastics and synthetic rubber in primary forms", group: "201" },
+    { id: "2", statement: "Manufacture of other chemical products", group: "202" },
+    { id: "3", statement: "Manufacture of man-made fibres", group: "203" },
+  ],
+  21: [
+    { id: "1", statement: "Manufacture of pharmaceuticals, medicinal chemical and botanical products", group: "210" },
+  ],
+  22: [
+    { id: "1", statement: "Manufacture of rubber products", group: "221" },
+    { id: "2", statement: "Manufacture of plastics products", group: "222" },
+  ],
+  23: [
+    { id: "1", statement: "Manufacture of glass and glass products", group: "231" },
+    { id: "8", statement: "Manufacture of other non-metallic mineral products", group: "239" },
+  ],
+  24: [
+    { id: "1", statement: "Manufacture of basic iron and steel", group: "241" },
+    { id: "2", statement: "Manufacture of basic precious and other non-ferrous metals", group: "242" },
+    { id: "3", statement: "Casting of metals", group: "243" },
+  ],
+  25: [
+    { id: "1", statement: "Manufacture of structural metal products", group: "251" },
+    { id: "2", statement: "Manufacture of tanks, reservoirs and containers of metal", group: "252" },
+    { id: "3", statement: "Manufacture of steam generators, except central heating hot water boilers", group: "253" },
+    { id: "4", statement: "Manufacture of weapons and ammunition", group: "254" },
+    { id: "5", statement: "Forging, pressing, stamping and roll-forming of metal; powder metallurgy", group: "255" },
+    { id: "6", statement: "Treatment and coating of metals; machining", group: "256" },
+    { id: "7", statement: "Manufacture of cutlery, hand tools and general hardware", group: "257" },
+    { id: "8", statement: "Manufacture of other fabricated metal products", group: "259" },
+  ],
+  26: [
+    { id: "1", statement: "Manufacture of electronic components and boards", group: "261" },
+    { id: "2", statement: "Manufacture of computers and peripheral equipment", group: "262" },
+    { id: "3", statement: "Manufacture of communication equipment", group: "263" },
+    { id: "4", statement: "Manufacture of consumer electronics", group: "264" },
+    { id: "5", statement: "Manufacture of measuring, testing, navigating and control equipment", group: "265" },
+    { id: "6", statement: "Manufacture of watches and clocks", group: "266" },
+  ],
   // Add more problem statements for other divisions...
 }
 
@@ -102,8 +165,8 @@ export default function ProblemStatement() {
             onClick={() => handleProblemSelect(problem.id)}
           >
             <CardHeader>
-              <CardTitle>Problem {problem.id}</CardTitle>
-              <CardDescription>Group {problem.group}</CardDescription>
+              <CardTitle>Topic {problem.group}</CardTitle>
+              
             </CardHeader>
             <CardContent>
               <p>{problem.statement}</p>
