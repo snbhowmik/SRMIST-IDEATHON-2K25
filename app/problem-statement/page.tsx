@@ -475,11 +475,6 @@ export default function ProblemStatement() {
             </Card>
           ))}
         </div>
-        <div className="mt-8 flex justify-center">
-          <Button onClick={handleSubmit} disabled={!selectedProblem}>
-            Submit Selection
-          </Button>
-        </div>
       </main>
 
       <Footer />
